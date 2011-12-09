@@ -9,6 +9,7 @@
 
 \def\OerstadVersion{0.1}
 
+
 \definecolor{beamer@structure@color}{named}{black}
 
 % colours and fonts
@@ -20,7 +21,7 @@
 \defbeamertemplate*{footline}{infolines theme}
 {
   \leavevmode%
-  \includegraphics[height=0.6cm]{itulogo.jpg}%
+  \includegraphics[height=0.6cm]{itulogo.jpg}\;\insertframenumber%
   \vskip1em%
 }
 
@@ -45,7 +46,7 @@
 {
   \thispagestyle{empty}
   \vspace{3em}
-  \begin{beamercolorbox}[sep=0.3cm]{title}
+  \begin{beamercolorbox}[sep=0.5cm]{title}
   \begin{centering}
   \usebeamerfont{title}\inserttitle\par
   \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
@@ -75,7 +76,7 @@
   \@tempdima=\textwidth%
   \advance\@tempdima by\beamer@leftmargin%
   \advance\@tempdima by\beamer@rightmargin%
-  \begin{beamercolorbox}[sep=0.3cm,#1]{frametitle}
+  \begin{beamercolorbox}[sep=0.3cm,#1,wd=1.1\textwidth]{frametitle}
     \usebeamerfont{frametitle}%
     \vbox{}\vskip-1ex%
     \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
@@ -94,10 +95,15 @@
 
 %%%% FONT THEME %%%%%%%
 
-\setbeamerfont{frametitle}{family=\sffamily,shape=\scshape,size=\LARGE}
+\setbeamerfont{frametitle}{family=\sffamily,shape=\scshape,size=\Large}
 \setbeamerfont{framesubtitle}{size=\large,parent={frametitle}}
 \setbeamerfont{title}{size=\LARGE,series=\bfseries,parent={frametitle}}
 \setbeamerfont{subtitle}{size=,parent={framesubtitle}}
+
+
+%\setbeamertemplate{itemize item}{\vspace{15mm}%
+% \textbullet}
+
 
 \ProcessOptionsBeamer
 
