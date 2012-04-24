@@ -6,6 +6,7 @@
 
 \usepackage{varwidth}
 \usepackage[overload]{textcase}
+\usepackage{helvet}
 
 \def\OerstadVersion{0.1}
 
@@ -21,7 +22,7 @@
 \defbeamertemplate*{footline}{infolines theme}
 {
   \leavevmode%
-  \includegraphics[height=0.6cm]{itulogo.jpg}\;\insertframenumber%
+  \includegraphics[height=0.6cm]{ITUboxhorisontal}\hfill\insertframenumber\phantom{XX}%
   \vskip1em%
 }
 
@@ -39,7 +40,23 @@
 \setbeamercolor*{author}{use=structure,fg=black,bg=white}
 
 
-\setbeamercolor{title}{fg=white!80!white,bg=black!20!black}
+\setbeamercolor{title}{fg=black!80!white,bg=white!20!white}
+
+% Blocks
+\setbeamercolor{structure}{fg=black}
+\setbeamerfont{structure}{shape=\scshape}
+\setbeamertemplate{block begin}{
+  \begin{beamercolorbox}{block title}%
+    \usebeamerfont*{block title}\insertblocktitle%
+  \end{beamercolorbox}%
+  \begingroup
+  \vskip.25em
+  \leftskip1em
+  \rightskip\leftskip
+}
+\setbeamertemplate{block end}{
+  \endgroup\vfill
+}
 
 % Title page
 \defbeamertemplate*{title page}{customized}[1][]
@@ -53,15 +70,18 @@
   \end{centering}
   \end{beamercolorbox}
   \bigskip
+  \vspace{1cm}
   \begin{beamercolorbox}[sep=0pt]{author}
   \begin{centering}
   \usebeamerfont{author}\insertauthor\par
   \usebeamerfont{institute}\insertinstitute\par
   \bigskip
   \usebeamerfont{date}\insertdate\par
-  \vspace{3em}
-\includegraphics[width=0.5\textwidth]{bigitu}\par
+  \vspace{3cm}
   \end{centering}
+
+  \includegraphics[width=0.3\textwidth]{ITUlogoukorange}\par
+
   \end{beamercolorbox}
 }
 
@@ -70,13 +90,14 @@
 {%
 }
 
+
 \defbeamertemplate*{frametitle}{customized}[1][left]
 {
   \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
   \@tempdima=\textwidth%
   \advance\@tempdima by\beamer@leftmargin%
   \advance\@tempdima by\beamer@rightmargin%
-  \begin{beamercolorbox}[sep=0.3cm,#1,wd=1.1\textwidth]{frametitle}
+  \begin{beamercolorbox}[sep=0.3cm,#1,wd=1.5\textwidth]{frametitle}
     \usebeamerfont{frametitle}%
     \vbox{}\vskip-1ex%
     \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
@@ -95,7 +116,7 @@
 
 %%%% FONT THEME %%%%%%%
 
-\setbeamerfont{frametitle}{family=\sffamily,shape=\scshape,size=\Large}
+\setbeamerfont{frametitle}{family=\sffamily,shape=\upshape,size=\Large}
 \setbeamerfont{framesubtitle}{size=\large,parent={frametitle}}
 \setbeamerfont{title}{size=\LARGE,series=\bfseries,parent={frametitle}}
 \setbeamerfont{subtitle}{size=,parent={framesubtitle}}
