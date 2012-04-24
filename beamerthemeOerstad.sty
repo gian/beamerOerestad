@@ -89,13 +89,14 @@
 {%
 }
 
+
 \defbeamertemplate*{frametitle}{customized}[1][left]
 {
   \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
   \@tempdima=\textwidth%
   \advance\@tempdima by\beamer@leftmargin%
   \advance\@tempdima by\beamer@rightmargin%
-  \begin{beamercolorbox}[sep=0.3cm,#1,wd=1.1\textwidth]{frametitle}
+  \begin{beamercolorbox}[sep=0.3cm,#1,wd=1.5\textwidth]{frametitle}
     \usebeamerfont{frametitle}%
     \vbox{}\vskip-1ex%
     \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
@@ -114,7 +115,7 @@
 
 %%%% FONT THEME %%%%%%%
 
-\setbeamerfont{frametitle}{family=\sffamily,shape=\scshape,size=\Large}
+\setbeamerfont{frametitle}{family=\sffamily,shape=\upshape,size=\Large}
 \setbeamerfont{framesubtitle}{size=\large,parent={frametitle}}
 \setbeamerfont{title}{size=\LARGE,series=\bfseries,parent={frametitle}}
 \setbeamerfont{subtitle}{size=,parent={framesubtitle}}
