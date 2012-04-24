@@ -39,7 +39,23 @@
 \setbeamercolor*{author}{use=structure,fg=black,bg=white}
 
 
-\setbeamercolor{title}{fg=white!80!white,bg=black!20!black}
+\setbeamercolor{title}{fg=black!80!white,bg=white!20!white}
+
+% Blocks
+\setbeamercolor{structure}{fg=black}
+\setbeamerfont{structure}{shape=\scshape}
+\setbeamertemplate{block begin}{
+  \begin{beamercolorbox}{block title}%
+    \usebeamerfont*{block title}\insertblocktitle%
+  \end{beamercolorbox}%
+  \begingroup
+  \vskip.25em
+  \leftskip1em
+  \rightskip\leftskip
+}
+\setbeamertemplate{block end}{
+  \endgroup\vfill
+}
 
 % Title page
 \defbeamertemplate*{title page}{customized}[1][]
