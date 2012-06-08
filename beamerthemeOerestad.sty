@@ -4,9 +4,9 @@
 %
 \ProvidesPackage{beamerthemeOerestad}[2011/12/07]
 
-\usepackage{varwidth}
-\usepackage[overload]{textcase}
-\usepackage{helvet}
+\RequirePackage{varwidth}
+\RequirePackage[overload]{textcase}
+\RequirePackage{helvet}
 
 \def\OerestadVersion{0.1}
 
@@ -75,10 +75,14 @@
   \usebeamerfont{institute}\insertinstitute\par
   \bigskip
   \usebeamerfont{date}\insertdate\par
-  \vspace{3cm}
+%  \vspace{3cm}
   \end{centering}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw (current page.south west) node[yshift=3ex, xshift=0.17\textwidth] {
+      \includegraphics[width=0.3\textwidth]{ITUlogoukorange}
+    };
+  \end{tikzpicture}
 
-  \includegraphics[width=0.3\textwidth]{ITUlogoukorange}\par
 
   \end{beamercolorbox}
 }
